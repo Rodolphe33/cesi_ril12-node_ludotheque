@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque/issues"
   },
-  "homepage": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque#readme"
+  "homepage": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque#readme",
+  "dependencies": {
+    "puppeteer-core": "^5.5.0"
+  }
 }
