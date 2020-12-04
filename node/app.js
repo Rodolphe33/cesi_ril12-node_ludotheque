@@ -4,14 +4,13 @@ const git = require('nodegit');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-// import
-// const recovery = require('./recovery');
-
 // Récupération du repository git
-git.Clone('https://github.com/SamuelBagattin/morpio')
+git.Clone('https://github.com/SamuelBagattin/morpio', './clone')
   .then((repo) => {
     console.log(repo);
-    // return repo.getMasterCommit();
+    // return repo;
+  }).then((commit) => {
+    return commit.getEntry("README.md");
   });
 
 // server
