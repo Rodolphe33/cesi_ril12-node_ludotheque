@@ -1,0 +1,19 @@
+{
+  "name": "cesi-ril1912-node-ludotheque",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rodolphe33/cesi_ril12-node_ludotheque.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque/issues"
+  },
+  "homepage": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque#readme"
+}
