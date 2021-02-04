@@ -5,14 +5,15 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 // Récupération du repository git
-gitCloner([
-  'morpio', {
-    source: 'https://github.com/SamuelBagattin/morpio',
-    path: './clones',
+gitCloner(
+  ['https://github.com/SamuelBagattin/morpio'], {
+    dest: `${__dirname}/clones`,
+    urlType: 'https'
   },
-], `${__dirname}/clones`, (err, data) => {
-  console.log(err || data);
-});
+  (err, data) => {
+    console.log(err || data);
+  }
+);
 
 // server
 const server = http.createServer((req, res) => {
