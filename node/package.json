@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque#readme",
   "devDependencies": {
     "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "git-cloner": "^1.1.8"
   }
 }

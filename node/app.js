@@ -1,17 +1,18 @@
 const http = require('http');
-const git = require('nodegit');
+const gitCloner = require('git-cloner');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
 // Récupération du repository git
-git.Clone('https://github.com/SamuelBagattin/morpio', './clone')
-  .then((repo) => {
-    console.log(repo);
-    // return repo;
-  }).then((commit) => {
-    return commit.getEntry("README.md");
-  });
+gitCloner([
+  'morpio', {
+    source: 'https://github.com/SamuelBagattin/morpio',
+    path: './clones',
+  },
+], `${__dirname}/clones`, (err, data) => {
+  console.log(err || data);
+});
 
 // server
 const server = http.createServer((req, res) => {
