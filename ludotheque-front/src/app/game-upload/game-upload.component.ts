@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game-upload.component.css']
 })
 export class GameUploadComponent implements OnInit {
-  public gameName;
-  public gameURL;
-  public gameDesc;
+  public gameName:string;
+  public gameURL:string;
+  public gameDesc:string;
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class GameUploadComponent implements OnInit {
   addGame() {
     console.log(this.gameName);
     console.log(this.gameURL);
-    console.log(this.gameDesc.value);
+    console.log(this.gameDesc);
  }
 
 }

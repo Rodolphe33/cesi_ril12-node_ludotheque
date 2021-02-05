@@ -15,7 +15,6 @@ export class LudothequeService {
   constructor(private http: HttpClient) { }
 
 
-
   getAllGames() {
     return this.http.get<Game>("http://localhost:8080/api/games/all", httpOptions);
   }
