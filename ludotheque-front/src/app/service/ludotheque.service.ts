@@ -12,7 +12,11 @@ export class LudothequeService {
 
 
   getAllGames() {
-    return this.http.get<Game>("http://localhost:8080/api/game/all");
+    return this.http.get<Game>("http://localhost:8080/api/games/all");
+  }
+
+  addGame(game:Game) {
+    return this.http.post<Game>("http://localhost:8080/api/games/add", game);
   }
 
 }

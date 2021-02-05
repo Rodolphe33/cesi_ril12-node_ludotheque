@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../models/game';
+import { LudothequeService } from '../service/ludotheque.service';
 
 @Component({
   selector: 'app-game-list',
@@ -8,14 +9,15 @@ import { Game } from '../models/game';
 })
 export class GameListComponent implements OnInit {
 
-  public games:Array<Game> = [];
+  public games
 
-  constructor() {
-    let game1 = new Game("Morpio","http://localhost","Le morpion est un jeu de réflexion se pratiquant à deux joueurs au tour par tour et dont le but est de créer le premier un alignement sur une grille. Le jeu se joue généralement avec papier et crayon.");
-    this.games.push(game1,game1,game1);
+  constructor(private ludothequeService:LudothequeService) {
   }
 
   ngOnInit(): void {
+    this.ludothequeService.getAllGames().subscribe(data => {
+      this.games=data;
+    });
   }
 
   public openGame(url:string):void {
