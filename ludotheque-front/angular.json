@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "ludotheque-front"
+  "defaultProject": "ludotheque-front",
+  "cli": {
+    "analytics": false
+  }
 }

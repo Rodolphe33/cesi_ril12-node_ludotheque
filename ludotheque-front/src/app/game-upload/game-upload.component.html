@@ -1,1 +1,17 @@
-<p>game-upload works!</p>
+<h2 id='title'>Charger un jeu</h2>
+
+<mat-form-field appearance='outline' class='form'>
+    <mat-label>Nom du jeu</mat-label>
+    <input matInput [(ngModel)]="gameName" placeholder="Morpio">
+</mat-form-field>
+<mat-form-field appearance='outline' class='form'>
+    <mat-label>URL du répertoire Git</mat-label>
+    <input matInput [(ngModel)]="gameURL" placeholder="https://github.com/monJeu">
+    <mat-hint align="end">Attention aux droits d'accès</mat-hint>
+</mat-form-field>
+<mat-form-field appearance="outline" class='form'>
+    <mat-label>Description courte du jeu</mat-label>
+    <textarea matInput [(ngModel)]="gameDesc" maxlength="250" placeholder="Le morpion est un jeu de réflexion..."></textarea>
+    <mat-hint align="end">Maximum 250 caractères</mat-hint>
+  </mat-form-field>
+  <button mat-stroked-button (click)="addGame()">Valider</button>
