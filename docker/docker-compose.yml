@@ -1,0 +1,22 @@
+version: '14'
+
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nodejs
+    restart: unless-stopped
+    environment:
+      - MONGO_USERNAME=$MONGO_USERNAME
+      - MONGO_PASSWORD=$MONGO_PASSWORD
+      - MONGO_HOSTNAME=db
+      - MONGO_PORT=$MONGO_PORT
+      - MONGO_DB=$MONGO_DB
+    ports:
+      - "80:3000"
+    volumes:
+      - .:\cesi_ril12-node_ludotheque\docker
+      - node_modules:\cesi_ril12-node_ludotheque\docker
+    networks:
+      - app-network
