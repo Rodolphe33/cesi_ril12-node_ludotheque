@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque/issues"
   },
-  "homepage": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque#readme"
+  "homepage": "https://github.com/Rodolphe33/cesi_ril12-node_ludotheque#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "get-port": "^5.1.1",
+    "git-cloner": "^1.1.8"
+  }
 }

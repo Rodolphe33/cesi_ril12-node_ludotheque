@@ -7,7 +7,7 @@ COPY package.json /opt/morpio
 RUN npm install
 
 # copy app files to dockerimage
-COPY src .
+COPY src src
 COPY *.json .
 
 # run

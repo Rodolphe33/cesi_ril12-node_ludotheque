@@ -1,14 +1,16 @@
-const http = require('http');
+const express = require('express');
+const appGame = express();
+let game = require('./clone');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+// Récupération du repository git
+// if (game === exist) {
+//   return;
+// } else {
+//   game.gitCloner();
+// }
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
+appGame.gitCloner();
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+appGame.listen(8080, () => {
+  console.log(`Server running ok`);
 });
