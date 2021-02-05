@@ -116,5 +116,5 @@ dist
 .pnp.*
 
 # custom
-docker/db_data/journal
+db_data
 node/clones
