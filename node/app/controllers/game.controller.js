@@ -33,7 +33,6 @@ exports.add = (req, res) => {
                 const projectName = data[0].source.name;
                 await build(projectName);
                 const hostPort = await run(projectName);
-                console.log(req);
                 const fullUrl = `${req.protocol}://${req.get('host')}:${hostPort}/${req.originalUrl}`;
                 res.send({ url: fullUrl });
             }
