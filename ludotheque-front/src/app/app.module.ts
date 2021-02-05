@@ -40,6 +40,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { LudothequeService } from './service/ludotheque.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { LudothequeService } from './service/ludotheque.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,

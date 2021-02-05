@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LudothequeService } from '../service/ludotheque.service';
+import { Game } from '../models/game';
 
 @Component({
   selector: 'app-game-upload',
@@ -7,9 +8,9 @@ import { LudothequeService } from '../service/ludotheque.service';
   styleUrls: ['./game-upload.component.css']
 })
 export class GameUploadComponent implements OnInit {
-  public gameName;
-  public gameURL;
-  public gameDesc;
+  public gameName:string;
+  public gameURL:string;
+  public gameDesc:string;
 
   constructor(private ludothequeService: LudothequeService) { }
 
