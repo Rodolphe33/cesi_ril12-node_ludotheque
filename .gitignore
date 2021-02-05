@@ -117,4 +117,4 @@ dist
 
 # custom
 db_data
-node/clones
+node/app/clones
