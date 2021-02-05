@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LudothequeService } from '../service/ludotheque.service';
 
 @Component({
   selector: 'app-game-upload',
@@ -10,7 +11,7 @@ export class GameUploadComponent implements OnInit {
   public gameURL;
   public gameDesc;
 
-  constructor() { }
+  constructor(private ludothequeService: LudothequeService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,8 @@ export class GameUploadComponent implements OnInit {
     console.log(this.gameName);
     console.log(this.gameURL);
     console.log(this.gameDesc.value);
+    let game:Game = new Game(this.gameName,this.gameURL,this.gameDesc);
+    this.ludothequeService.addGame(game);
  }
 
 }
