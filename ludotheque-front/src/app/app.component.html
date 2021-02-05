@@ -1,12 +1,13 @@
 <app-header></app-header>
 <div class="container">
     <nav mat-tab-nav-bar>
-        <a mat-tab-link routerLink="/" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
-          Liste des jeux
-        </a>
-        <a mat-tab-link routerLink="/upload" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
-          Upload un jeu
-        </a>
+      <a mat-tab-link
+        *ngFor="let link of navLinks"
+        [routerLink]="link.link"
+        routerLinkActive #rla="routerLinkActive"
+        [active]="rla.isActive">
+       {{link.label}}
+      </a>
     </nav>
   <router-outlet></router-outlet>
 </div>
