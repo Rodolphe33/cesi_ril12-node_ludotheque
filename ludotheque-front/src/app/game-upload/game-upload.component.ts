@@ -22,7 +22,9 @@ export class GameUploadComponent implements OnInit {
     console.log(this.gameURL);
     console.log(this.gameDesc);
     let game:Game = new Game(this.gameName,this.gameURL,this.gameDesc);
-    this.ludothequeService.addGame(game);
+    this.ludothequeService.addGame(game).subscribe(data => {
+      console.log(data);
+    });
  }
 
 }
