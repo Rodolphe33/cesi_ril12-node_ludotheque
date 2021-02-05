@@ -53,8 +53,7 @@ const initial = () => {
 // routes
 require('./app/routes/auth.routes')(appLudotheque);
 require('./app/routes/user.routes')(appLudotheque);
-
-appLudotheque.gitCloner();
+require('./app/routes/game.routes')(appLudotheque);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

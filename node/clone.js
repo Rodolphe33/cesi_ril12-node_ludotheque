@@ -1,7 +1,8 @@
 const gitCloner = require('git-cloner');
 
 gitCloner(
-    ['https://github.com/SamuelBagattin/morpio'], {
+    ['https://github.com/SamuelBagattin/morpio'],
+    {
         dest: `${__dirname}/clones`,
         urlType: 'https'
     },
