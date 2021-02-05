@@ -4,9 +4,10 @@ const { execSync } = require('child_process');
 
 const build = async (projectName) => {
     const projectPath = path.join("clones", projectName);
+    const srcDockerfilePath = path.join("..", "..", "docker", "Dockerfile");
     const dockerfilePath = path.join(projectPath, "Dockerfile");
 
-    fs.copyFileSync(`..${path.sep}docker${path.sep}Dockerfile`, dockerfilePath);
+    fs.copyFileSync(srcDockerfilePath, dockerfilePath);
     execSync(
         `docker build -t ${projectName} ${projectPath} --no-cache`,
         { stdio: 'inherit' }
