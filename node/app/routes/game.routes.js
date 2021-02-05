@@ -10,4 +10,5 @@ module.exports = (app) => {
     });
 
     app.get("/api/games/all", controller.getAll);
+    app.post("/api/games/add", controller.add);
 };

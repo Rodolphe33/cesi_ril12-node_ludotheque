@@ -24,6 +24,7 @@ const run = async (project) => {
     execSync(`docker run -d --rm -p ${hostPort}:${containerPort} --name ${project} ${project}`, {
         stdio: 'inherit'
     });
+    // return à faire
 }
 
 const getDockerPorts = async (project) => {
@@ -36,6 +37,6 @@ const getDockerPorts = async (project) => {
     }
 }
 
-run('morpio');
+// run('morpio');
 
 module.exports = run;
