@@ -6,28 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'ludotheque-front';
-  navLinks: any[];
-  activeLinkIndex = -1;
 
-  constructor(private router: Router) {
-    this.navLinks = [
-        {
-            label: 'Liste des jeux',
-            link: '/',
-            index: 0
-        }, {
-            label: 'Upload un jeu',
-            link: '/upload',
-            index: 1
-        },
-    ];
-  }
-
-  ngOnInit(): void {
-    this.router.events.subscribe((res) => {
-        this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
-    });
-  }
 }

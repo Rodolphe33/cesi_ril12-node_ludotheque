@@ -7,6 +7,7 @@ import { GameListComponent } from './game-list/game-list.component';
 import { GameUploadComponent } from './game-upload/game-upload.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 //Import Material
 import {MatButtonModule} from '@angular/material/button';
@@ -38,6 +39,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { LudothequeService } from './service/ludotheque.service';
 
 @NgModule({
   declarations: [
@@ -78,9 +80,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LudothequeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

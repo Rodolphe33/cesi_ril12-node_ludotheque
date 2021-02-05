@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Game } from '../models/game';
-import { HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Access-Control-Allow-Origin' : '*',
+    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+  })
+};
 
 @Injectable()
 export class LudothequeService {
@@ -12,11 +17,11 @@ export class LudothequeService {
 
 
   getAllGames() {
-    return this.http.get<Game>("http://localhost:8080/api/games/all");
+    return this.http.get<Game>("http://localhost:8080/api/games/all", httpOptions);
   }
 
   addGame(game:Game) {
-    return this.http.post<Game>("http://localhost:8080/api/games/add", game);
+    return this.http.post<Game>("http://localhost:8080/api/games/add", game, httpOptions);
   }
 
 }
