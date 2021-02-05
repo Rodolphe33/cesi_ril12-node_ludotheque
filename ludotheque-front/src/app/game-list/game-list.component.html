@@ -1,0 +1,22 @@
+<mat-grid-list cols="3" rowHeight="600px">
+    <mat-grid-tile *ngFor="let game of games">
+      <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>{{game.name}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="https://media.vitrinemagique.com/pdmain/26123-H-00-3P_HAUPTBILD_WS_3P_FR.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              {{game.description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button (click)="openGame(game.url)" mat-button>JOUER A CE JEU</button>
+          </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+ </mat-grid-list>
+
+
+
+
