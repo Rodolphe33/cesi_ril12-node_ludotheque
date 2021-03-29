@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  node:
+    container_name: ludotech
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 9898:8080
+    networks:
+      - ludotech
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: ludotheque_db
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - ludotech
+
+volumes:
+  mongo_data:
+
+networks:
+  ludotech:
