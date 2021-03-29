@@ -1,0 +1,18 @@
+services: 
+  - name: docker:dind
+
+variables: 
+  GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+  - build
+  - deploy
+
+build:staging:
+  script:
+    - echo "build"
+
+deploy:staging:
+  script:
+    - echo "deploy"
+  needs: ["build:staging"]
