@@ -9,22 +9,22 @@ appLudotheque.use(cors(corsOptions));
 appLudotheque.use(bodyParser.json()); // parse requests of content-type - application/json
 appLudotheque.use(bodyParser.urlencoded({ extended: true })); // parse requests of content-type - application/x-www-form-urlencoded
 
-const db = require("./app/models");
-const dbConfig = require("./app/config/db.config");
-const Role = db.role;
-db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => {
-    console.log("Successfully connect to MongoDB.");
-    initial();
-  })
-  .catch(err => {
-    console.error("Connection error", err);
-    process.exit();
-  });
+// const db = require("./app/models");
+// const dbConfig = require("./app/config/db.config");
+// const Role = db.role;
+// db.mongoose
+//   .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   })
+//   .then(() => {
+//     console.log("Successfully connect to MongoDB.");
+//     initial();
+//   })
+//   .catch(err => {
+//     console.error("Connection error", err);
+//     process.exit();
+//   });
 
 const initial = () => {
   Role.estimatedDocumentCount((err, count) => {

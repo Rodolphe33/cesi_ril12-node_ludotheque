@@ -8,6 +8,8 @@ services:
       context: .
     ports:
       - 9898:8080
+    volumes:
+      - /var/run/docker.socket:/var/run/docker.socket
     networks:
       - ludotech
     depends_on:
