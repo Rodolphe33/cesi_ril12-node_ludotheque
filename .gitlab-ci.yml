@@ -9,10 +9,12 @@ stages:
   - deploy
 
 build:staging:
+  stage: build
   script:
     - echo "build"
 
 deploy:staging:
+  stage: deploy
   script:
     - echo "deploy"
   needs: ["build:staging"]
